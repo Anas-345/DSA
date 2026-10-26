@@ -10,7 +10,7 @@ func search(nums []int, target int) int {
 		mid := int((start + end) / 2)
 		if nums[mid] == target {
 			return mid
-		} else if nums[mid] > nums[0] {
+		} else if nums[mid] >= nums[0] {
 			if nums[mid] < target || nums[start] > target {
 				start = mid + 1
 			} else {
@@ -29,7 +29,7 @@ func search(nums []int, target int) int {
 }
 
 func main() {
-	nums := []int{4, 5, 6, 7, 8, 0, 1, 2}
+	nums := []int{6, 7, 1, 2, 3, 4, 5}
 
-	fmt.Println(search(nums, 3))
+	fmt.Println(search(nums, 4))
 }
